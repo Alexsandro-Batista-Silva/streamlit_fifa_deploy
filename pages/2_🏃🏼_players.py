@@ -5,6 +5,18 @@ st.set_page_config(
     page_icon="🏃🏼",
     layout="wide"
 )
+
+if "data" not in st.session_state:
+    # Se não estiverem, você precisa carregar os dados novamente.
+    # Recomendo ler o arquivo CSV ou a fonte de dados aqui.
+    # Exemplo:
+    df = pd.read_csv("caminho/para/seu/arquivo_fifa.csv") 
+    st.session_state["data"] = df
+
+# --- FIM DA CORREÇÃO ---
+
+# Agora sim, o código original vai funcionar sem erro
+
 df_data = st.session_state["data"]
 
 
