@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from datetime import datetime
 
 st.set_page_config(
     page_title="Players",
@@ -13,7 +14,7 @@ if "data" not in st.session_state:
     df_data = df_data[df_data["Value(£)"] > 0]
     df_data = df_data.sort_values(by="Overall", ascending=False)
     st.session_state["data"] = df_data
-    
+
 df_data = st.session_state["data"]
 
 clubes = df_data["Club"].value_counts().index
